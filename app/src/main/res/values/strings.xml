@@ -5,4 +5,14 @@
     <string name="title_activity_progressactivity">Progressactivity</string>
     <string name="title_activity_update_weight">UpdateWeightActivity</string>
     <string name="title_activity_login">LoginActivity</string>
+
+
+    <string-array name="category">
+        <item>white</item>
+        <item>green</item>
+        <item>red</item>
+        <item>blue</item>
+        <item>grey</item>
+        <item>yellow</item>
+    </string-array>
 </resources>

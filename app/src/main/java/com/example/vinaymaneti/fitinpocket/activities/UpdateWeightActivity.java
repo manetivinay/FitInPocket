@@ -3,6 +3,9 @@ package com.example.vinaymaneti.fitinpocket.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,6 +31,8 @@ public class UpdateWeightActivity extends AppCompatActivity {
     private Button updateButton;
     private TextView dateTextView;
     private DatabaseHandler datebaseHandler;
+    byte[] byteArray;
+    Bitmap bmp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,10 @@ public class UpdateWeightActivity extends AppCompatActivity {
         updateButton = (Button) findViewById(R.id.updateButton);
         dateTextView = (TextView) findViewById(R.id.dateTextView);
 
+        if (getIntent().getExtras() != null) {
+            byte[] byteArray = getIntent().getByteArrayExtra("imageUri");
+            bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        }
         Calendar c = Calendar.getInstance();
         System.out.println("Current time => " + c.getTime());
 
@@ -55,6 +64,11 @@ public class UpdateWeightActivity extends AppCompatActivity {
 //                List<ProfileModel> allList = datebaseHandler.getAllList();
 ////                for (int i = 0; i < allList.size(); i++) {
                 if (Integer.parseInt(updateWeight.getText().toString()) <= target_weight) {
+                    ProfileModel profileModel = new ProfileModel();
+                    profileModel.setDate_time_created(formattedDate);
+                    profileModel.setCurrent_weight(Integer.parseInt(updateWeight.getText().toString()));
+                    profileModel.setImge_bitmap(bmp);
+                    datebaseHandler.addTodo(new ProfileModel(profileModel.getDate_time_created(), null, null, 0, 0, profileModel.getCurrent_weight(), 0, profileModel.getImge_bitmap()));
                     Intent mainActivityIntent = new Intent(UpdateWeightActivity.this, Progressactivity.class);
                     mainActivityIntent.putExtra("Target", updateWeight.getText().toString());
                     startActivity(mainActivityIntent);
@@ -65,7 +79,8 @@ public class UpdateWeightActivity extends AppCompatActivity {
                     ProfileModel profileModel = new ProfileModel();
                     profileModel.setDate_time_created(formattedDate);
                     profileModel.setCurrent_weight(Integer.parseInt(updateWeight.getText().toString()));
-                    datebaseHandler.addTodo(new ProfileModel(profileModel.getDate_time_created(), null, null, 0, 0, profileModel.getCurrent_weight(), 0));
+                    profileModel.setImge_bitmap(bmp);
+                    datebaseHandler.addTodo(new ProfileModel(profileModel.getDate_time_created(), null, null, 0, 0, profileModel.getCurrent_weight(), 0, profileModel.getImge_bitmap()));
                     Intent mainActivityIntent = new Intent(UpdateWeightActivity.this, MainActivity.class);
                     startActivity(mainActivityIntent);
                     finish();

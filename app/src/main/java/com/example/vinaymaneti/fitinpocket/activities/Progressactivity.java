@@ -23,9 +23,12 @@ public class Progressactivity extends AppCompatActivity {
         setContentView(R.layout.activity_progressactivity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        String targetReached = getIntent().getExtras().getString("Target");
         needInputLossWeight = (TextView) findViewById(R.id.needInputLossWeight);
-        needInputLossWeight.setText(targetReached);
+        if (getIntent().getExtras() != null) {
+            String targetReached = getIntent().getExtras().getString("Target");
+            needInputLossWeight.setText(targetReached);
+        }
+
         updateButton = (Button) findViewById(R.id.updateButton);
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
