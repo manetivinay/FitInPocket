@@ -42,6 +42,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
+
+            <TextView
+                android:id="@+id/noHistoryRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="No History to display"
+                android:visibility="gone" />
+
         </RelativeLayout>
 
 

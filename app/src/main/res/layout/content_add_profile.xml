@@ -83,9 +83,9 @@
                         android:layout_below="@id/currentDateViewTextView"
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center_horizontal"
-                        app:civ_border_color="#FFFFFF"
-                        android:src="@drawable/profile_icon"
                         android:padding="10dp"
+                        android:src="@drawable/profile_icon"
+                        app:civ_border_color="#FFFFFF"
                         app:civ_border_width="5dp" />
 
 
@@ -205,6 +205,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:inputType="number"
                             tools:text="" />
 
                         <TextView
@@ -220,6 +221,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:inputType="number"
                             tools:text="" />
 
                         <TextView
@@ -252,6 +254,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
+                            android:inputType="numberDecimal"
                             tools:text="" />
 
                         <TextView
@@ -284,6 +287,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
+                            android:inputType="numberDecimal"
                             tools:text="" />
 
                         <TextView

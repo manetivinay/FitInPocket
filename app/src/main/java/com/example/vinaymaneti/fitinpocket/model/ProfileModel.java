@@ -5,10 +5,6 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by VinayManeti on 25/04/17.
- */
-
 public class ProfileModel implements Parcelable {
     private String name;
     private String gender;

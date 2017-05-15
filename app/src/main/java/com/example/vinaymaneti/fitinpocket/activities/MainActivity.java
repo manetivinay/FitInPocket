@@ -24,7 +24,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar mToolbar;
-    private RelativeLayout rrAddProfile, rrHistory, rrProgress, rrUpdateWeight;
+    private RelativeLayout rrAddProfile, rrHistory, rrProgress;
     private RelativeLayout content_main;
     private DatabaseHandler mDatabaseHandler;
 
@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rrAddProfile = (RelativeLayout) findViewById(R.id.rrAddProfile);
         rrHistory = (RelativeLayout) findViewById(R.id.rrHistory);
         rrProgress = (RelativeLayout) findViewById(R.id.rrProgress);
-        rrUpdateWeight = (RelativeLayout) findViewById(R.id.rrUpdateWeight);
         content_main = (RelativeLayout) findViewById(R.id.content_main);
 
         mToolbar.setTitle("Home");
@@ -105,12 +104,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(historyIntent);
                 break;
             case R.id.rrProgress:
-                Intent progressIntent = new Intent(this, Progressactivity.class);
+                Intent progressIntent = new Intent(this, ProgressActivity.class);
                 startActivity(progressIntent);
-                break;
-            case R.id.rrUpdateWeight:
-                Intent updateWeightIntent = new Intent(this, UpdateWeightActivity.class);
-                startActivity(updateWeightIntent);
                 break;
         }
     }

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,7 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.vinaymaneti.fitinpocket.R;
 import com.example.vinaymaneti.fitinpocket.db.DatabaseHandler;
@@ -23,7 +21,6 @@ import com.example.vinaymaneti.fitinpocket.model.ProfileModel;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.List;
 
 public class UpdateWeightActivity extends AppCompatActivity {
 
@@ -69,7 +66,7 @@ public class UpdateWeightActivity extends AppCompatActivity {
                     profileModel.setCurrent_weight(Integer.parseInt(updateWeight.getText().toString()));
                     profileModel.setImge_bitmap(bmp);
                     datebaseHandler.addTodo(new ProfileModel(profileModel.getDate_time_created(), null, null, 0, 0, profileModel.getCurrent_weight(), 0, profileModel.getImge_bitmap()));
-                    Intent mainActivityIntent = new Intent(UpdateWeightActivity.this, Progressactivity.class);
+                    Intent mainActivityIntent = new Intent(UpdateWeightActivity.this, ProgressActivity.class);
                     mainActivityIntent.putExtra("Target", updateWeight.getText().toString());
                     startActivity(mainActivityIntent);
                     finish();

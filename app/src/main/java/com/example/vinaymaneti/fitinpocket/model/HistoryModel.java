@@ -2,10 +2,6 @@ package com.example.vinaymaneti.fitinpocket.model;
 
 import java.util.ArrayList;
 
-/**
- * Created by VinayManeti on 25/04/17.
- */
-
 public class HistoryModel {
     private String date;
     private String weight;

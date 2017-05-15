@@ -12,10 +12,13 @@ import android.widget.TextView;
 
 import com.example.vinaymaneti.fitinpocket.R;
 
-public class Progressactivity extends AppCompatActivity {
+public class ProgressActivity extends AppCompatActivity {
 
     private TextView needInputLossWeight;
     private Button updateButton;
+    private TextView weightLossed;
+    private TextView lbs;
+    private TextView CongratsTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +27,24 @@ public class Progressactivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         needInputLossWeight = (TextView) findViewById(R.id.needInputLossWeight);
+        weightLossed = (TextView) findViewById(R.id.weightLossed);
+        lbs = (TextView) findViewById(R.id.lbs);
+        CongratsTextView = (TextView) findViewById(R.id.CongratsTextView);
         if (getIntent().getExtras() != null) {
             String targetReached = getIntent().getExtras().getString("Target");
             needInputLossWeight.setText(targetReached);
+        } else {
+            needInputLossWeight.setVisibility(View.INVISIBLE);
+            weightLossed.setVisibility(View.INVISIBLE);
+            lbs.setVisibility(View.INVISIBLE);
+            CongratsTextView.setText("You still need to work out, Keep moving!");
         }
 
         updateButton = (Button) findViewById(R.id.updateButton);
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mainActivity = new Intent(Progressactivity.this, AddProfileActivity.class);
+                Intent mainActivity = new Intent(ProgressActivity.this, AddProfileActivity.class);
                 startActivity(mainActivity);
                 finish();
             }

@@ -14,10 +14,6 @@ import com.example.vinaymaneti.fitinpocket.model.ProfileModel;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by VinayManeti on 25/04/17.
- */
-
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     //All static variables

@@ -52,7 +52,7 @@
             android:label="@string/title_activity_history"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.Progressactivity"
+            android:name=".activities.ProgressActivity"
             android:label="@string/title_activity_progressactivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

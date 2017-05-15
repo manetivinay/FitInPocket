@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -287,7 +288,12 @@ public class AddProfileActivity extends AppCompatActivity implements View.OnClic
                 profileModel.setTarget_weight(Integer.parseInt(targetWeightEditText.getText().toString()));
                 Uri outputFileUri = getCaptureImageOutputUri();
                 Log.d("mBitmap", String.valueOf(myBitmap));
-                profileModel.setImge_bitmap(myBitmap);
+                if (myBitmap != null) {
+                    profileModel.setImge_bitmap(myBitmap);
+                } else {
+                    myBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.profile_icon);
+                    profileModel.setImge_bitmap(myBitmap);
+                }
 
                 mDatabaseHandler.addTodo(new ProfileModel(profileModel.getDate_time_created(), profileModel.getName(), profileModel.getGender(), profileModel.getAge_years(), profileModel.getAge_months(), profileModel.getCurrent_weight(), profileModel.getTarget_weight(), profileModel.getImge_bitmap()));
                 Toast.makeText(this, "successfully stored", Toast.LENGTH_LONG).show();

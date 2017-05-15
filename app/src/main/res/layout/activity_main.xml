@@ -110,33 +110,6 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/rrUpdateWeight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rrProgress">
-
-            <TextView
-                android:id="@+id/updateDash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:text="-"
-                android:textSize="32sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_toRightOf="@id/updateDash"
-                android:gravity="center"
-                android:text="Update Weight"
-                android:textSize="32sp" />
-
-        </RelativeLayout>
-
-
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

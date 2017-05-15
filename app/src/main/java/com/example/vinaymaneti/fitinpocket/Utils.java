@@ -1,9 +1,5 @@
 package com.example.vinaymaneti.fitinpocket;
 
-/**
- * Created by VinayManeti on 14/05/17.
- */
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 

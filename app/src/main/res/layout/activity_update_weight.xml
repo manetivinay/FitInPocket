@@ -74,7 +74,8 @@
                 android:layout_margin="10dp"
                 android:layout_toRightOf="@id/firstDash"
                 android:gravity="center"
-                android:hint="add your're latest weight" />
+                android:hint="add your're latest weight"
+                android:inputType="numberDecimal" />
 
         </LinearLayout>
 
