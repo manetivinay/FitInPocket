@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.vinaymaneti.fitinpocket.R;
+import com.example.vinaymaneti.fitinpocket.Utils;
 import com.example.vinaymaneti.fitinpocket.db.DatabaseHandler;
 import com.example.vinaymaneti.fitinpocket.model.ProfileModel;
 
@@ -33,6 +34,7 @@ public class UpdateWeightActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Utils.themeSettings(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_weight);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

@@ -91,6 +91,7 @@ public class AddProfileActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.themeSettings(this);
         setContentView(R.layout.activity_add_profile);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Add profile");
@@ -117,6 +118,13 @@ public class AddProfileActivity extends AppCompatActivity implements View.OnClic
         //get the permissions we have asked for before but are not granted..
         //we will store this in a global list to access later.
 
+        List<ProfileModel> allList = mDatabaseHandler.getAllList();
+        if (allList.size() > 0) {
+            currentWeightEditText.setEnabled(true);
+            ProfileModel profileModel1 = allList.get(0);
+            currentWeightEditText.setText(String.valueOf(profileModel1.getCurrent_weight()));
+            currentWeightEditText.setEnabled(false);
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (permissionsToRequest.size() > 0)
@@ -161,7 +169,6 @@ public class AddProfileActivity extends AppCompatActivity implements View.OnClic
             nameEditText.setText(name);
             yearsEditText.setText(String.valueOf(age_years));
             monthsEditText.setText(String.valueOf(age_months));
-            currentWeightEditText.setText(String.valueOf(current_weight));
             targetWeightEditText.setText(String.valueOf(target_weight));
         }
 
@@ -440,7 +447,7 @@ public class AddProfileActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        Bitmap bitmap;
+        Bitmap bitmap = null;
         if (resultCode == Activity.RESULT_OK) {
 
             if (getPickImageResultUri(data) != null) {
@@ -459,7 +466,15 @@ public class AddProfileActivity extends AppCompatActivity implements View.OnClic
 
 
             } else {
-                bitmap = (Bitmap) data.getExtras().get("data");
+                if (data.getData() != null) {
+                    bitmap = (Bitmap) data.getExtras().get("data");
+                } else {
+                    try {
+                        bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data.getData());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
 
                 myBitmap = bitmap;
                 CircleImageView croppedImageView = (CircleImageView) findViewById(R.id.img_profile);

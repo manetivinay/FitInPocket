@@ -6,13 +6,17 @@
     <string name="title_activity_update_weight">UpdateWeightActivity</string>
     <string name="title_activity_login">LoginActivity</string>
 
+    <string name="def_theme">green</string>
+    <string name="theme_summary">Appearance</string>
+    <string name="theme_dialog_title">Theme</string>
+    <string name="settings">Settings</string>
 
-    <string-array name="category">
-        <item>white</item>
+    <string-array name="themes">
         <item>green</item>
         <item>red</item>
         <item>blue</item>
         <item>grey</item>
         <item>yellow</item>
     </string-array>
+
 </resources>

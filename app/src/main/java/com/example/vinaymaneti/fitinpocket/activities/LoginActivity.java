@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.vinaymaneti.fitinpocket.R;
+import com.example.vinaymaneti.fitinpocket.Utils;
 import com.example.vinaymaneti.fitinpocket.db.DatabaseHandler;
 import com.example.vinaymaneti.fitinpocket.model.ProfileModel;
 
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Utils.themeSettings(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

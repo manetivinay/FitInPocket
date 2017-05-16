@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.vinaymaneti.fitinpocket.R;
+import com.example.vinaymaneti.fitinpocket.Utils;
 
 public class ProgressActivity extends AppCompatActivity {
 
@@ -22,6 +23,7 @@ public class ProgressActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Utils.themeSettings(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progressactivity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

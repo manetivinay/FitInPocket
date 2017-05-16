@@ -1,7 +1,10 @@
 package com.example.vinaymaneti.fitinpocket.activities;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +19,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.vinaymaneti.fitinpocket.R;
+import com.example.vinaymaneti.fitinpocket.Utils;
 import com.example.vinaymaneti.fitinpocket.db.DatabaseHandler;
 import com.example.vinaymaneti.fitinpocket.model.ProfileModel;
 
@@ -27,12 +31,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RelativeLayout rrAddProfile, rrHistory, rrProgress;
     private RelativeLayout content_main;
     private DatabaseHandler mDatabaseHandler;
+    private Activity activity = null;
+    private int SETTINGS_ACTION = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Utils.themeSettings(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mDatabaseHandler = new DatabaseHandler(this);
         List<ProfileModel> mProfileList = mDatabaseHandler.getAllList();
         if (mProfileList != null) {
@@ -51,46 +57,85 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rrAddProfile.setOnClickListener(this);
         rrHistory.setOnClickListener(this);
         rrProgress.setOnClickListener(this);
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.android_action_bar_spinner_menu, menu);
-
-        MenuItem item = menu.findItem(R.id.spinner);
-        Spinner spinner = (Spinner) MenuItemCompat.getActionView(item);
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.category, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinner.setAdapter(adapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedItem = parent.getItemAtPosition(position).toString();
-                Toast.makeText(getApplicationContext(), selectedItem, Toast.LENGTH_SHORT).show();
-                if (selectedItem.equalsIgnoreCase("white")) {
-                    content_main.setBackgroundColor(Color.parseColor("#f0f8ff"));
-                } else if (selectedItem.equalsIgnoreCase("green")) {
-                    content_main.setBackgroundColor(Color.parseColor("#7fffd4"));
-                } else if (selectedItem.equalsIgnoreCase("red")) {
-                    content_main.setBackgroundColor(Color.parseColor("#ff6a6a"));
-                } else if (selectedItem.equalsIgnoreCase("blue")) {
-                    content_main.setBackgroundColor(Color.parseColor("#729fcf"));
-                } else if (selectedItem.equalsIgnoreCase("grey")) {
-                    content_main.setBackgroundColor(Color.parseColor("#b4becc"));
-                } else if (selectedItem.equalsIgnoreCase("yellow")) {
-                    content_main.setBackgroundColor(Color.parseColor("#fafad2"));
-                }
-            } // to close the onItemSelected
-
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.settings:
+                startActivityForResult(new Intent(this,
+                        ThemePreferenceActivity.class), SETTINGS_ACTION);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == SETTINGS_ACTION) {
+            if (resultCode == ThemePreferenceActivity.RESULT_CODE_THEME_UPDATED) {
+                finish();
+                startActivity(getIntent());
+                return;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.android_action_bar_spinner_menu, menu);
+//
+//        MenuItem item = menu.findItem(R.id.spinner);
+//        Spinner spinner = (Spinner) MenuItemCompat.getActionView(item);
+//
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//                R.array.category, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        spinner.setAdapter(adapter);
+//
+//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                String selectedItem = parent.getItemAtPosition(position).toString();
+//                Toast.makeText(getApplicationContext(), selectedItem, Toast.LENGTH_SHORT).show();
+//                if (selectedItem.equalsIgnoreCase("white")) {
+////                    Utils.changeToTheme(MainActivity.this, Utils.THEME_DEFAULT);
+////                    content_main.setBackgroundColor(Color.parseColor("#f0f8ff"));
+//                } else if (selectedItem.equalsIgnoreCase("green")) {
+////                    Utils.changeToTheme(MainActivity.this, Utils.THEME_WHITE);
+////                    content_main.setBackgroundColor(Color.parseColor("#7fffd4"));
+//                } else if (selectedItem.equalsIgnoreCase("red")) {
+////                    Utils.changeToTheme(MainActivity.this, Utils.THEME_BLUE);
+////                    content_main.setBackgroundColor(Color.parseColor("#ff6a6a"));
+//                }
+//
+//
+////                else if (selectedItem.equalsIgnoreCase("blue")) {
+////                    content_main.setBackgroundColor(Color.parseColor("#729fcf"));
+////                } else if (selectedItem.equalsIgnoreCase("grey")) {
+////                    content_main.setBackgroundColor(Color.parseColor("#b4becc"));
+////                } else if (selectedItem.equalsIgnoreCase("yellow")) {
+////                    content_main.setBackgroundColor(Color.parseColor("#fafad2"));
+////                }
+//
+//            } // to close the onItemSelected
+//
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+//        return true;
+//    }
 
     @Override
     public void onClick(View v) {

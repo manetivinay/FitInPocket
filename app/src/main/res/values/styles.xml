@@ -30,4 +30,25 @@
     <style name="SplashScreenTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/background_splash</item>
     </style>
+
+    <style name="green">
+        <item name="background">@color/green</item>
+    </style>
+
+    <style name="red">
+        <item name="background">@color/red</item>
+    </style>
+
+    <style name="blue">
+        <item name="background">@color/blue</item>
+    </style>
+
+    <style name="grey">
+        <item name="background">@color/grey</item>
+    </style>
+
+    <style name="yellow">
+        <item name="background">@color/yellow</item>
+    </style>
+
 </resources>
