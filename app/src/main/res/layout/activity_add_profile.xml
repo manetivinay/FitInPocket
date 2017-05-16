@@ -4,7 +4,7 @@
     android:background="?attr/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vinaymaneti.fitinpocket.activities.AddProfileActivity">
+    tools:context="com.example.thukuntla_sai.FitInPocket.activities.AddProfileActivity">
 
     <include layout="@layout/content_add_profile" />
 

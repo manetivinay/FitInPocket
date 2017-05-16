@@ -1,4 +1,4 @@
-package com.example.vinaymaneti.fitinpocket.activities;
+package com.example.thukuntla_sai.FitInPocket.activities;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -28,10 +28,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.vinaymaneti.fitinpocket.R;
-import com.example.vinaymaneti.fitinpocket.Utils;
-import com.example.vinaymaneti.fitinpocket.db.DatabaseHandler;
-import com.example.vinaymaneti.fitinpocket.model.ProfileModel;
+import com.example.thukuntla_sai.FitInPocket.R;
+import com.example.thukuntla_sai.FitInPocket.Utils;
+import com.example.thukuntla_sai.FitInPocket.db.DatabaseHandler;
+import com.example.thukuntla_sai.FitInPocket.model.ProfileModel;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

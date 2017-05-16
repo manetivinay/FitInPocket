@@ -1,11 +1,11 @@
-package com.example.vinaymaneti.fitinpocket.activities;
+package com.example.thukuntla_sai.FitInPocket.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.vinaymaneti.fitinpocket.R;
+import com.example.thukuntla_sai.FitInPocket.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

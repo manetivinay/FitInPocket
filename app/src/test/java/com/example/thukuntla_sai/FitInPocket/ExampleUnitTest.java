@@ -1,4 +1,4 @@
-package com.example.vinaymaneti.fitinpocket;
+package com.example.thukuntla_sai.FitInPocket;
 
 import org.junit.Test;
 

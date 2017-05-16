@@ -1,7 +1,6 @@
-package com.example.vinaymaneti.fitinpocket;
+package com.example.thukuntla_sai.FitInPocket;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

@@ -5,7 +5,7 @@
     android:background="?attr/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vinaymaneti.fitinpocket.activities.HistoryActivity">
+    tools:context="com.example.thukuntla_sai.FitInPocket.activities.HistoryActivity">
 
     <include layout="@layout/content_history" />
 

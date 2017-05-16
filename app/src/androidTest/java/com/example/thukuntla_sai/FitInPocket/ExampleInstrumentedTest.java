@@ -1,4 +1,4 @@
-package com.example.vinaymaneti.fitinpocket;
+package com.example.thukuntla_sai.FitInPocket;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

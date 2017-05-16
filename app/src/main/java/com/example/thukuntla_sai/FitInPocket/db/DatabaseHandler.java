@@ -1,4 +1,4 @@
-package com.example.vinaymaneti.fitinpocket.db;
+package com.example.thukuntla_sai.FitInPocket.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.example.vinaymaneti.fitinpocket.Utils;
-import com.example.vinaymaneti.fitinpocket.model.ProfileModel;
+import com.example.thukuntla_sai.FitInPocket.Utils;
+import com.example.thukuntla_sai.FitInPocket.model.ProfileModel;
 
 import java.util.ArrayList;
 import java.util.List;

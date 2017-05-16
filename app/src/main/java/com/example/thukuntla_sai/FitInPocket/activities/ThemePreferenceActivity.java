@@ -1,12 +1,12 @@
-package com.example.vinaymaneti.fitinpocket.activities;
+package com.example.thukuntla_sai.FitInPocket.activities;
 
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.example.vinaymaneti.fitinpocket.R;
-import com.example.vinaymaneti.fitinpocket.Utils;
+import com.example.thukuntla_sai.FitInPocket.R;
+import com.example.thukuntla_sai.FitInPocket.Utils;
 
 public class ThemePreferenceActivity extends PreferenceActivity {
     public static final int RESULT_CODE_THEME_UPDATED = 1;

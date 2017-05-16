@@ -1,4 +1,4 @@
-package com.example.vinaymaneti.fitinpocket.model;
+package com.example.thukuntla_sai.FitInPocket.model;
 
 import java.util.ArrayList;
 

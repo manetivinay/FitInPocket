@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.vinaymaneti.fitinpocket.activities.UpdateWeightActivity"
+    tools:context="com.example.thukuntla_sai.FitInPocket.activities.UpdateWeightActivity"
     tools:showIn="@layout/activity_update_weight">
 
 </android.support.constraint.ConstraintLayout>

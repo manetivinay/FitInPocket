@@ -1,4 +1,4 @@
-package com.example.vinaymaneti.fitinpocket.activities;
+package com.example.thukuntla_sai.FitInPocket.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.vinaymaneti.fitinpocket.R;
-import com.example.vinaymaneti.fitinpocket.Utils;
+import com.example.thukuntla_sai.FitInPocket.R;
+import com.example.thukuntla_sai.FitInPocket.Utils;
 
 public class ProgressActivity extends AppCompatActivity {
 

@@ -1,27 +1,20 @@
-package com.example.vinaymaneti.fitinpocket.activities;
+package com.example.thukuntla_sai.FitInPocket.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.preference.PreferenceManager;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.vinaymaneti.fitinpocket.R;
-import com.example.vinaymaneti.fitinpocket.Utils;
-import com.example.vinaymaneti.fitinpocket.db.DatabaseHandler;
-import com.example.vinaymaneti.fitinpocket.model.ProfileModel;
+import com.example.thukuntla_sai.FitInPocket.R;
+import com.example.thukuntla_sai.FitInPocket.Utils;
+import com.example.thukuntla_sai.FitInPocket.db.DatabaseHandler;
+import com.example.thukuntla_sai.FitInPocket.model.ProfileModel;
 
 import java.util.List;
 

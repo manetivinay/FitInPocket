@@ -1,4 +1,4 @@
-package com.example.vinaymaneti.fitinpocket.activities;
+package com.example.thukuntla_sai.FitInPocket.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +15,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.vinaymaneti.fitinpocket.R;
-import com.example.vinaymaneti.fitinpocket.Utils;
-import com.example.vinaymaneti.fitinpocket.db.DatabaseHandler;
-import com.example.vinaymaneti.fitinpocket.model.ProfileModel;
+import com.example.thukuntla_sai.FitInPocket.R;
+import com.example.thukuntla_sai.FitInPocket.Utils;
+import com.example.thukuntla_sai.FitInPocket.db.DatabaseHandler;
+import com.example.thukuntla_sai.FitInPocket.model.ProfileModel;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

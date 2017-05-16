@@ -1,7 +1,6 @@
-package com.example.vinaymaneti.fitinpocket.model;
+package com.example.thukuntla_sai.FitInPocket.model;
 
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 

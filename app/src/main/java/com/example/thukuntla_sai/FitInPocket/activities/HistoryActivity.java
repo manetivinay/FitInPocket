@@ -1,8 +1,6 @@
-package com.example.vinaymaneti.fitinpocket.activities;
+package com.example.thukuntla_sai.FitInPocket.activities;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,11 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.vinaymaneti.fitinpocket.R;
-import com.example.vinaymaneti.fitinpocket.Utils;
-import com.example.vinaymaneti.fitinpocket.adapter.HistoryAdapter;
-import com.example.vinaymaneti.fitinpocket.db.DatabaseHandler;
-import com.example.vinaymaneti.fitinpocket.model.ProfileModel;
+import com.example.thukuntla_sai.FitInPocket.R;
+import com.example.thukuntla_sai.FitInPocket.Utils;
+import com.example.thukuntla_sai.FitInPocket.adapter.HistoryAdapter;
+import com.example.thukuntla_sai.FitInPocket.db.DatabaseHandler;
+import com.example.thukuntla_sai.FitInPocket.model.ProfileModel;
 
 import java.util.List;
 

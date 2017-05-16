@@ -1,4 +1,4 @@
-package com.example.vinaymaneti.fitinpocket.adapter;
+package com.example.thukuntla_sai.FitInPocket.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,9 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.vinaymaneti.fitinpocket.R;
-import com.example.vinaymaneti.fitinpocket.model.HistoryModel;
-import com.example.vinaymaneti.fitinpocket.model.ProfileModel;
+import com.example.thukuntla_sai.FitInPocket.R;
+import com.example.thukuntla_sai.FitInPocket.model.ProfileModel;
 
 import java.util.List;
 
